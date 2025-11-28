@@ -1,0 +1,21 @@
+Package: pSILACms
+Type: Package
+Title: Analysis package for pulsed SILAC data 
+Version: 1.0.0
+Authors@R: c(
+  person("Nico", "Hüttmann", , "nico.huettmann@embl.de", role = c("aut", "cre"),
+         comment = c(ORCID = "YOUR-ORCID-ID"))
+  )         
+Description: Analyze MS-based protein turnover data 
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/nicohuttmann/pSILACms, https://nicohuttmann.github.io/pSILACms/
+BugReports: https://github.com/nicohuttmann/pSILACms/issues
+Suggests: 
+    BiocManager
+VignetteBuilder: knitr
+Imports:
+    broom, 
+    tidyverse
+RoxygenNote: 7.3.1
