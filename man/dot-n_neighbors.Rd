@@ -2,15 +2,19 @@
 % Please edit documentation in R/data_filtering.R
 \name{.n_neighbors}
 \alias{.n_neighbors}
-\title{Title}
+\title{Count neighboring timepoints for each element in a vector}
 \usage{
 .n_neighbors(x, na.as = 0)
 }
 \arguments{
-\item{x}{}
+\item{x}{Numeric vector of timepoint indices}
 
-\item{na.as}{}
+\item{na.as}{Value to return for NA elements (default: 0)}
+}
+\value{
+Numeric vector of neighbor counts
 }
 \description{
-Title
+Helper function that counts how many neighboring values (differing by 1) exist
+for each element in a vector. Used internally for consecutive timepoint filtering.
 }

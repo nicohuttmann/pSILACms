@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_filtering.R
 \name{plot_SILAC_plateaus_1}
 \alias{plot_SILAC_plateaus_1}
-\title{Title}
+\title{Plot density distribution for proteins plateauing at Fraction_Old = 1}
 \usage{
 plot_SILAC_plateaus_1(
   data,
@@ -16,22 +16,27 @@ plot_SILAC_plateaus_1(
 )
 }
 \arguments{
-\item{data}{}
+\item{data}{A data frame containing pSILAC data}
 
-\item{S2N_threshold}{}
+\item{S2N_threshold}{Signal-to-noise threshold for detecting plateaus (default: 2)}
 
-\item{return_all_rows}{}
+\item{return_all_rows}{If TRUE, returns all rows with a 'fit' column; if FALSE, returns only passing rows (default: FALSE)}
 
-\item{value_col}{}
+\item{value_col}{Name of the column containing the values to filter (default: "Fraction_Old")}
 
-\item{variables_col}{}
+\item{variables_col}{Name of the column containing variable identifiers (default: "variables")}
 
-\item{observations_col}{}
+\item{observations_col}{Name of the column containing observation identifiers (default: "observations")}
 
-\item{pulse_time_col}{}
+\item{pulse_time_col}{Name of the column containing pulse time information (default: "Pulse_time")}
 
-\item{group_cols}{}
+\item{group_cols}{Character vector of additional grouping column names (default: c())}
+}
+\value{
+A ggplot2 object showing density distributions
 }
 \description{
-Title
+Creates density plots to visualize the distribution of Fraction_Old values for
+proteins identified as potentially plateauing at 1. Useful for quality control
+and threshold selection.
 }

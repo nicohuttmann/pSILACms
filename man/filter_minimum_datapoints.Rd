@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_filtering.R
 \name{filter_minimum_datapoints}
 \alias{filter_minimum_datapoints}
-\title{Title}
+\title{Filter pSILAC data by minimum number of replicates per timepoint}
 \usage{
 filter_minimum_datapoints(
   data,
@@ -16,22 +16,26 @@ filter_minimum_datapoints(
 )
 }
 \arguments{
-\item{data}{}
+\item{data}{A data frame containing pSILAC data}
 
-\item{min_values_per_timepoint}{}
+\item{min_values_per_timepoint}{Minimum number of valid replicates required per timepoint (default: 2)}
 
-\item{return_all_rows}{}
+\item{return_all_rows}{If TRUE, returns all rows with a 'fit' column; if FALSE, returns only passing rows (default: TRUE)}
 
-\item{value_col}{}
+\item{value_col}{Name of the column containing the values to filter (default: "Fraction_Old")}
 
-\item{variables_col}{}
+\item{variables_col}{Name of the column containing variable identifiers (default: "variables")}
 
-\item{observations_col}{}
+\item{observations_col}{Name of the column containing observation identifiers (default: "observations")}
 
-\item{pulse_time_col}{}
+\item{pulse_time_col}{Name of the column containing pulse time information (default: "Pulse_time")}
 
-\item{group_cols}{}
+\item{group_cols}{Character vector of additional grouping column names (default: c())}
+}
+\value{
+A data frame with the same structure as input, either filtered or with a 'fit' column
 }
 \description{
-Title
+Removes timepoints that have fewer than the specified minimum number of valid
+replicate measurements. This ensures sufficient statistical power for each timepoint.
 }

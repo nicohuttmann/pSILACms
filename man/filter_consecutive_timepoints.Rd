@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_filtering.R
 \name{filter_consecutive_timepoints}
 \alias{filter_consecutive_timepoints}
-\title{Title}
+\title{Filter pSILAC data by consecutive timepoint coverage}
 \usage{
 filter_consecutive_timepoints(
   data,
@@ -17,28 +17,30 @@ filter_consecutive_timepoints(
 )
 }
 \arguments{
-\item{data}{}
+\item{data}{A data frame containing pSILAC data}
 
-\item{min_consecutive_timepoints}{}
+\item{min_consecutive_timepoints}{Minimum number of consecutive timepoints required (default: 2)}
 
-\item{only_keep_consecutive_timepoints}{}
+\item{only_keep_consecutive_timepoints}{If TRUE, requires all timepoints to be consecutive;
+if FALSE, only requires the minimum number somewhere in the series (default: TRUE)}
 
-\item{return_all_rows}{}
+\item{return_all_rows}{If TRUE, returns all rows with a 'fit' column; if FALSE, returns only passing rows (default: TRUE)}
 
-\item{value_col}{}
+\item{value_col}{Name of the column containing the values to filter (default: "Fraction_Old")}
 
-\item{variables_col}{}
+\item{variables_col}{Name of the column containing variable identifiers (default: "variables")}
 
-\item{observations_col}{}
+\item{observations_col}{Name of the column containing observation identifiers (default: "observations")}
 
-\item{pulse_time_col}{}
+\item{pulse_time_col}{Name of the column containing pulse time information (default: "Pulse_time")}
 
-\item{group_cols}{}
-
-\item{min_values_per_timepoint}{}
-
-\item{only_keep_complete_timepoints}{}
+\item{group_cols}{Character vector of additional grouping column names (default: c())}
+}
+\value{
+A data frame with the same structure as input, either filtered or with a 'fit' column
 }
 \description{
-Title
+Ensures that data has sufficient consecutive timepoint coverage for reliable
+kinetic analysis. Can filter based on whether any consecutive timepoints exist
+or require all timepoints to be consecutive.
 }
